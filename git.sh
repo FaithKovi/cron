@@ -2,11 +2,11 @@
 
 cd /home/kaka/cron
 
-git status > file.txt  #Using the > so it overwrites the existing content of the file.
+git status > file.txt  #Using the > overwrites the existing content of the file.
 
 GIT_PUSH='Changes not staged for commit:'
 
-LINE=$(sed '4!d' file.txt)
+LINE=$(sed '4!d' file.txt)   #Reads the 4th line of git status found in file.txt
 
 if [ "$LINE" == "$GIT_PUSH" ];
 then
