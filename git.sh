@@ -2,10 +2,23 @@
 
 cd /home/kaka/cron
 
-git add .
+git status > file.txt  #Using the > so it overwrites the existing content of the file.
 
-DATE=$(date)
+GIT_PUSH='Changes not staged for commit:'
 
-git commit -m "These changes were made on $DATE"
+LINE=$(sed '4!d' file.txt)
 
-git push
+if [ "$LINE" == "$GIT_PUSH" ];
+then
+
+  git add .
+
+  DATE=$(date)
+
+  git commit -m "These changes were made on $DATE"
+
+  git push
+
+fi
+
+
