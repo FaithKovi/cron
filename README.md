@@ -2,7 +2,11 @@
 
 ### Cron job for automating git push
 
-#### Input this into the crontab -e 
+#### Run the command
+```
+crontab -e
+``` 
+#### input the line of code below
 ```
 0 18 * * 1-5 ./git.sh
 ```
